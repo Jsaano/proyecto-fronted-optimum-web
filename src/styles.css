@@ -1,0 +1,22 @@
+nav {
+    background-color: #fe8c12;
+  }
+
+.titulo
+{
+    color: #e7cf4f;
+}
+
+body {
+  font-family: sans-serif !important;
+  background-color: black !important;
+}
+
+.texto-welcome
+{
+  background-color: #0a0a0a;
+}
+
+footer {
+  background-color:  #fe8c12;
+  };
