@@ -19,8 +19,7 @@ export default function App() {
       <Provider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Context />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profileUser" element={<ProfileUser/>} />
