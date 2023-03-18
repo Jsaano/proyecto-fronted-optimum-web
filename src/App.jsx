@@ -20,11 +20,11 @@ export default function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profileUser" element={<ProfileUser/>} />
-            <Route path="/profileAdmin" element={<ProfileAdmin/>} />
-            <Route path="/userCourse" element={<UserCourse/>} />
+            <Route path="/public/register" element={<Register />} />
+            <Route path="/public/login" element={<Login />} />
+            <Route path="/private/profileUser/:id_user" element={<ProfileUser/>} />
+            <Route path="/private/profileAdmin" element={<ProfileAdmin/>} />
+            <Route path="/private/profileUser/:id_user/course/:id_course" element={<UserCourse/>} />
           </Routes>
         </BrowserRouter>
       </Provider>

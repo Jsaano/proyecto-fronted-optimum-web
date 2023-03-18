@@ -1,56 +1,31 @@
-export default function CardsProfileUser() {
-    return (
-        <div className="container mt-5 mb-5">
-        <div className="row">
-            <div className="col-sm-4">
-                <div className="card">
-                <img
-                src="https://images.pexels.com/photos/1003561/pexels-photo-1003561.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                className="card-img-top"
-                alt="..."
-                />
-                <div className="card-body">
-                <h5 className="card-title">Curso 1</h5>
-                <p className="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                </p>
-                </div>
-            </div>
-            </div>
-            <div className="col-sm-4">
-            <div className="card">
-                <img
-                src="https://images.pexels.com/photos/1003561/pexels-photo-1003561.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                className="card-img-top"
-                alt="..."
-                />
-                <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                </p>
-                </div>
-            </div>
-            </div>
-            <div className="col-sm-4">
-            <div className="card">
-                <img
-                src="https://images.pexels.com/photos/1003561/pexels-photo-1003561.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                className="card-img-top"
-                alt="..."
-                />
-                <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">
-                    Some quick example text to build on the card title and make up
-                    the bulk of the card's content.
-                </p>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    );
+import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
+export default function CardsProfileUser({ courses }) {
+  const navigate = useNavigate();
+
+  const handleClick = (id_course) => {
+    navigate(`/private/profileUser/:id_user/course/${id_course}`);
+  };
+
+  return (
+    <div className="d-flex flex-wrap justify-content-center">
+      {courses.map((course, index) => (
+        <Card className="m-3" style={{ width: "18rem" }} key={index}>
+          <Card.Img variant="top" src={course.miniature} />
+          <Card.Body>
+            <Card.Title>{course.name_course}</Card.Title>
+            <Card.Text>{course.description}</Card.Text>
+            <Button
+              variant="primary"
+              onClick={() => handleClick(course.id)}
+            >
+              Ir al curso
+            </Button>
+          </Card.Body>
+        </Card>
+      ))}
+    </div>
+  );
 }

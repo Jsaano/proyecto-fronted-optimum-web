@@ -21,7 +21,7 @@ export default function Register () {
   const addUser = () => {
     setUsers([...users, user]);
     alert("Usuario registrado");
-    navigate("/login");
+    navigate("/public/login");
   };
 
   return (
@@ -75,7 +75,7 @@ export default function Register () {
         <Button variant="warning me-3" onClick={addUser}>
           Registrarme
         </Button>
-        <Link to="/home" className="text-decoration-none text-dark">
+        <Link to="/" className="text-decoration-none text-dark">
           <Button variant="light">Volver</Button>
         </Link>
       </Form>

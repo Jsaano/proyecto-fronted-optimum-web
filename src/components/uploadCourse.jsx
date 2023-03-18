@@ -20,7 +20,7 @@ export default function UploadCourse () {
       const addCourse = () => {
      setCourses([...courses, course]);
      alert("Curso registrado");
-     navigate("/profileAdmin");
+     navigate("/private/profileAdmin");
       };
     
       return (

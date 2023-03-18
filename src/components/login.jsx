@@ -19,7 +19,7 @@ const addUser = () => {
   if (userExists) {
     setSession(user);
     alert("Usuario identificado con éxito");
-    navigate("/profile");
+    navigate('/private/profileUser/:id_user');
   } else {
     alert("Email o contraseña incorrecta");
   }
