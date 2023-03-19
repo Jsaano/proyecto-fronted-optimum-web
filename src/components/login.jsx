@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ContextOrigin from "../context.jsx";
 const { Context } = ContextOrigin;
+const jwt = require('jsonwebtoken');
 
 const Login = () => {
   const { setSession } = useContext(Context);
