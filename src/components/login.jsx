@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ContextOrigin from "../context.jsx";
 const { Context } = ContextOrigin;
-const jwt = require('jsonwebtoken');
 
 const Login = () => {
   const { setSession } = useContext(Context);
@@ -27,9 +26,8 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         const accessToken = data.accessToken;
-        const decodedToken = jwt.decode(accessToken);
-        setSession(decodedToken);
-        navigate("/private/profileUser/:id_user");
+        setSession(accessToken);
+        navigate(`/private/profileUser/${data.id_user}`);
       } else {
         const data = await response.json();
         alert(data.message);

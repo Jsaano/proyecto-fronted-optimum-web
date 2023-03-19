@@ -1,0 +1,48 @@
+[33mcommit d069588fc7e02ae1b976cad6acae069af5b0bbb3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: asalazar <a.salazar096@gmail.com>
+Date:   Sun Mar 19 11:15:02 2023 -0300
+
+    octavo commit
+
+[33mcommit 4441aa848c989d34a42c892c854a3947acfa8185[m
+Author: asalazar <a.salazar096@gmail.com>
+Date:   Sun Mar 19 11:09:57 2023 -0300
+
+    septimo commit
+
+[33mcommit 16fb546eef0fc6c6801b1c3647c9f474476694d0[m
+Author: asalazar <a.salazar096@gmail.com>
+Date:   Sat Mar 18 18:39:36 2023 -0300
+
+    sexto commit
+
+[33mcommit 2bf820c374a2cecba8d9587be4377d71779f4702[m
+Merge: d74cccd 12f4495
+Author: asalazar <a.salazar096@gmail.com>
+Date:   Sun Mar 12 22:14:40 2023 -0300
+
+    Merge branch 'master' of https://github.com/Jsaano/proyecto-fronted-optimum-web
+
+[33mcommit d74cccd1ff6cc00fdcd6d365086f1ceb37cb5679[m
+Author: asalazar <a.salazar096@gmail.com>
+Date:   Sun Mar 12 22:13:31 2023 -0300
+
+    tercer commit
+
+[33mcommit 12f4495f5244114f995958b56dd7070921298045[m
+Author: Jsaano <95000166+Jsaano@users.noreply.github.com>
+Date:   Wed Mar 8 19:23:58 2023 -0300
+
+    Create README.md
+
+[33mcommit af07dd9eefc289846dffd8f25a9e0ce0648b2e85[m
+Author: asalazar <a.salazar096@gmail.com>
+Date:   Wed Mar 8 01:16:05 2023 -0300
+
+    coomit inicial
+
+[33mcommit 4e499fd2a54e96b9c6851552b3dd003cc1d9c1cd[m
+Author: asalazar <a.salazar096@gmail.com>
+Date:   Sat Feb 25 20:12:50 2023 -0300
+
+    Initialize project using Create React App
