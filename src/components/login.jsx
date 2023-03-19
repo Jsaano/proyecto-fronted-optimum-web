@@ -17,7 +17,7 @@ const Login = () => {
       const response = await fetch(
         `${process.env.REACT_APP_BASE_URL}/public/login`,
         {
-          method: "GET",
+          method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),
         }
@@ -54,12 +54,11 @@ const Login = () => {
           <hr />
         </div>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>Usuario</Form.Label>
           <Form.Control
             name="username"
             onChange={handleInputChange}
-            type="email"
-            placeholder="name@example.com"
+            type="text"
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
