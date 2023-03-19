@@ -15,7 +15,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/login`,
+        `${process.env.REACT_APP_BASE_URL}/public/login`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
