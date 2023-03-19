@@ -27,7 +27,6 @@ export default function Register () {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),
         }); 
-        console.log (response)
         if (response.status === 201){
         setUsers([...users, user]);
         alert("Usuario registrado");
