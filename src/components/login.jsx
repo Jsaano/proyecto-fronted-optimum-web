@@ -24,7 +24,10 @@ const Login = () => {
       );
 
       if (response.ok) {
+        console.log(response);
+        console.log(response.json)
         const data = await response.json();
+        console.log(data);
         const accessToken = data.accessToken;
         setSession(accessToken);
         navigate(`/private/profileUser/${data.id_user}`);

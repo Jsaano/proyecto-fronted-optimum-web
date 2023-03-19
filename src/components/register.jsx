@@ -18,12 +18,28 @@ export default function Register () {
   });
 
   const navigate = useNavigate();
-  const addUser = () => {
-    setUsers([...users, user]);
-    alert("Usuario registrado");
-    navigate("/public/login");
+  const addUser = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_BASE_URL}/public/register`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        }); 
+        console.log (response)
+        if (response.status === 201){
+        setUsers([...users, user]);
+        alert("Usuario registrado");
+        navigate("/public/login");
+        }
+        else {alert ("Usuario ya registrado")
+        }
+      } catch (error) {
+        console.log (error)
+        return error;
+    };
   };
-
   return (
     <div className="vh-100 pt-5">
       <Form className="w-50 mx-auto border p-3 rounded bg-success text-white ">
