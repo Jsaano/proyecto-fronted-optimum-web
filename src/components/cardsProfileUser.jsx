@@ -9,19 +9,25 @@ export default function CardsProfileUser({ courses, user }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/private/profileUser/${id}`,
+        `${process.env.REACT_APP_BASE_URL}/public/searchCourse/${id}`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         }
       );
-      const data = await response.json();
-      console.log(data);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        navigate(`/private/profileUser/${user}/course/${id}`);
+      } else {
+        const data = await response.json();
+        alert(data.message);
+      }
     } catch (error) {
       console.error(error);
+      alert("Error en el servidor");
     }
   };
 
