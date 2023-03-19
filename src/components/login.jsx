@@ -14,6 +14,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
+      console.log (user)
       const response = await fetch(
         `${process.env.REACT_APP_BASE_URL}/public/login`,
         {
