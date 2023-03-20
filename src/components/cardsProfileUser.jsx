@@ -1,58 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function CardsProfileUser({ courses, user }) {
+export default function CardsProfileUser() {
+  const [courses, setCourses] = useState([]);
+
   const navigate = useNavigate();
-  const [id, setId] = useState(null);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/public/searchCourse/${id}`,
-        {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        navigate(`/private/profileUser/${user}/course/${id}`);
-      } else {
-        const data = await response.json();
-        alert(data.message);
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Error en el servidor");
-    }
-  };
-
-  const handleClick = (id_course) => {
-    navigate(`/private/profileUser/${user}/course/${id_course}`);
-  };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => setId(e.target.value)} />
-        <button type="submit">Buscar usuario</button>
-      </form>
-      {courses && courses.length > 0 && courses.map((course, index) => (
-        <Card className="m-3" style={{ width: "18rem" }} key={index}>
+    <>
+      {courses.map((course) => (
+        <Card key={course.id}>
           <Card.Img variant="top" src={course.miniature} />
           <Card.Body>
             <Card.Title>{course.name_course}</Card.Title>
             <Card.Text>{course.description}</Card.Text>
-            <Button variant="primary" onClick={() => handleClick(course.id)}>
-              Ir al curso
-            </Button>
           </Card.Body>
         </Card>
       ))}
-    </div>
+    </>
   );
 }
