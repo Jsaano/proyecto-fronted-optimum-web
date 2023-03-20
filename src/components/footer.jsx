@@ -1,12 +1,18 @@
-export default function Footer () {
+import React from "react";
+
+export default function Footer() {
   return (
     <footer>
       <div className="container footer">
         <div className="row">
-          <div className="col-md-4">
-            <img src="https://i.ibb.co/kXThS6F/Icon2.jpg" alt="Logo de la empresa" />
+          <div className="col-md-4 mb-3 mb-md-0">
+            <img
+              src="https://i.ibb.co/kXThS6F/Icon2.jpg"
+              alt="Logo de la empresa"
+              className="img-fluid"
+            />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 mb-3 mb-md-0">
             <h4>Contacto</h4>
             <ul>
               <li>Correo electrónico: contacto@empresa.com</li>
