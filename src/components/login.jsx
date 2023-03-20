@@ -32,13 +32,6 @@ const Login = () => {
         const accessToken = data.accessToken;
         setSession(accessToken);
         navigate(`/private/profileUser/${data.id_user}`);
-        const consulta = await fetch  (`/private/profileUser/${data.id_user}`,
-        {
-          method: "get",
-          headers: { "Content-Type": "application/json" },
-        }
-        )
-        console.log (consulta)
       } else {
         const data = await response.json();
         alert(data.message);
